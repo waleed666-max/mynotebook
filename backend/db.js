@@ -1,8 +1,8 @@
 /*const mongoose = require('mongoose');
 require('dotenv').config(); 
-
+  //for local use
 // const  = 'mongodb://127.0.0.1:27017/inotebook';
-//const mongoURI = 'mongodb+srv://waleedakhtar_db_user:waleed123@inotebook.u8reyco.mongodb.net/?appName=inotebook';
+//const mongoURI = 'mongodb+srv:env';
 const mongoURI = process.env.MONGO_URI;
 const connectToMongo = () => {
   mongoose.connect(mongoURI)
