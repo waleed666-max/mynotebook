@@ -17,8 +17,14 @@ if (!process.env.MONGO_URI) {
   process.exit(1);
 }
 
-// Middleware
-app.use(cors());
+// ✅ CORS fix for mobile
+app.use(cors({
+  origin: '*',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'auth-token']
+}));
+
 app.use(express.json());
 
 // Routes
@@ -30,7 +36,7 @@ const startServer = async () => {
   await connectToMongo();
   
   app.listen(port, () => {
-    console.log(`✅ iNotebook backend listening at http://localhost:${port}`);
+    console.log(`✅ iNotebook backend listening on port ${port}`);
   });
 };
 
