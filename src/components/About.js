@@ -166,7 +166,7 @@ const About = () => {
         <h3 className="text-white fw-bold mb-3">Ready to Get Started?</h3>
         <p className="text-white mb-4">Start organizing your thoughts today!</p>
         <h3 className="container text-white ">
-          ©2026 || 666. All Rights Reserved.
+          ©2026 | 666 | All Rights Reserved.
         </h3>
       </div>
 
