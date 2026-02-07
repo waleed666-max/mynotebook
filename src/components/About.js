@@ -123,14 +123,30 @@ const About = () => {
                 </div>
                 <h5 className="card-title mb-0 fw-bold">Built With</h5>
               </div>
-              <div className="d-flex flex-wrap gap-2">
-                <span className="badge bg-primary px-3 py-2">React</span>
-                <span className="badge bg-success px-3 py-2">Node.js</span>
-                <span className="badge bg-warning text-dark px-3 py-2">Express</span>
-                <span className="badge bg-info px-3 py-2">MongoDB</span>
-                <span className="badge bg-secondary px-3 py-2">Bootstrap</span>
-                <span className="badge bg-dark px-3 py-2">JWT Auth</span>
-              </div>
+            
+             
+             <div className="d-flex flex-wrap gap-2">
+  <span className="badge bg-primary px-3 py-2">
+    <i className="fab fa-react me-2"></i>React
+  </span>
+  <span className="badge bg-success px-3 py-2">
+    <i className="fab fa-node-js me-2"></i>Node.js
+  </span>
+  <span className="badge bg-warning text-dark px-3 py-2">
+    <i className="fas fa-server me-2"></i>Express
+  </span>
+  <span className="badge bg-info px-3 py-2">
+    <i className="fas fa-database me-2"></i>MongoDB
+  </span>
+  <span className="badge bg-secondary px-3 py-2">
+    <i className="fab fa-bootstrap me-2"></i>Bootstrap
+  </span>
+  <span className="badge bg-dark px-3 py-2">
+    <i className="fas fa-key me-2"></i>JWT Auth
+  </span>
+</div>
+
+              
             </div>
           </div>
         </div>
