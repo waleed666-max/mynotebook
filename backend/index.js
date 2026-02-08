@@ -22,14 +22,23 @@ app.use(cors({
 
 app.use(express.json());
 
-// Test route
-app.get('/', (req, res) => {
-  res.json({ message: 'iNotebook Backend Running!' });
-});
-
-// API Routes
+// API Routes (pehle!)
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/notes', require('./routes/notes'));
+
+// Serve React build (production)
+const buildPath = path.join(__dirname, '../build');
+app.use(express.static(buildPath));
+
+// Health check for Replit
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+// Catch all - serve React app (last!)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
+});
 
 const startServer = async () => {
   await connectToMongo();
@@ -37,18 +46,5 @@ const startServer = async () => {
     console.log(`✅ Backend listening on port ${port}`);
   });
 };
-
-const path = require('path');
-
-// Serve React build (production)
-app.use(express.static(path.join(__dirname, '../frontend/build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
-});
-
-
-// ---------- END OF ADDITION ----------
-
 
 startServer();

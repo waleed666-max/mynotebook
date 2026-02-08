@@ -1,0 +1,8 @@
+run = "npm run start"
+
+[env]
+PORT = "5000"
+
+[deployment]
+run = ["npm", "install", "--prefix", "backend", "&&", "npm", "run", "build", "&&", "node", "backend/index.js"]
+deploymentTarget = "autoscale"
